@@ -42,16 +42,26 @@ app.get("/api/users", async (req, res) => {
 });
 
 // MongoDB Connection
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("Connected to MongoDB "))
-  .catch((err) => console.error("MongoDB connection error:", err));
+let isConnected = false;
+async function connectDB() {
+    if (!isConnected) {
+        try {
+            await mongoose.connect(process.env.MONGO_URI, {
+                useNewUrlParser: true,
+                useUnifiedTopology: true,
+            });
+            isConnected = true;
+            console.log("Connected to MongoDB");
+        } catch (err) {
+            console.error("MongoDB connection error:", err);
+        }
+    }
+}
 
+connectDB();
 
 // Server को HTTP server से run करो
-// app.listen(PORT, () => {
-//   console.log(`Server is running on http://localhost:${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
 
-
-module.exports = app;
