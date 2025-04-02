@@ -20,7 +20,7 @@ const dev = process.env.NODE_DEV;
 
 // Middleware setup
 app.use(cors({
-    origin: dev !== "production" ? "http://localhost:5173" : "",
+    origin: dev !== "production" ? "http://localhost:5173" : "https://eveman-two.vercel.app/",
     credentials: true,
 }));
 app.use(bodyParser.json());
