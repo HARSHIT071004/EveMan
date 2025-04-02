@@ -7,16 +7,14 @@ const clientroute = require("./Routes/Clientroute");
 const signuproute = require("./Routes/signuproutes");
 const loginroutes = require("./Routes/Loginroutes");
 const alleventroutes = require("./Routes/Alleventroutes");
-const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 require("dotenv").config();
 
-const dev = process.env.NODE_DEV;
-
+const app = express();
 
 // Middleware setup
 app.use(cors({
-    origin: dev !== "production" ? "http://localhost:5173" : "https://eveman-two.vercel.app/",
+    origin: process.env.NODE_DEV === "production" ? "https://eveman-two.vercel.app/" : "http://localhost:5173",
     credentials: true,
 }));
 app.use(bodyParser.json());
@@ -45,10 +43,7 @@ app.get("/api/users", async (req, res) => {
 
 // MongoDB Connection
 mongoose
-  .connect("mongodb://127.0.0.1:27017/eveman", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("Connected to MongoDB "))
   .catch((err) => console.error("MongoDB connection error:", err));
 
