@@ -70,6 +70,7 @@ const router = express.Router();
 router.post("/signup", async (req, res) => {
   try {
     const { name, email, password } = req.body;
+    
 
     const existingUser = await Signup.findOne({ email });
     if (existingUser) {

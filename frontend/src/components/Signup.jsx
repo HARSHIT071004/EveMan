@@ -14,11 +14,7 @@ const Signup = () => {
 
     try {
       const data = { name, email, password };
-      const response = await axios.post("/api/signup",data, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await axios.post("/api/signup",data);
       console.log(response.data);
 
       if (response.status === 200) {
