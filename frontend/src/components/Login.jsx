@@ -11,21 +11,19 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/login", {
+      const data = { email, password };
+      const response = await axios.post("/api/login", data,{
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
       });
 
-      const data = await response.json();
-
       if (response.status === 200) {
-        alert(data.message);
-        localStorage.setItem("token", data.token);
+        alert(response.data.message);
+        localStorage.setItem("token", response.data.token);
         navigate("/createevent");
       } else {
-        setError(data.message || "Failed to login"); 
+        setError(response.data.message || "Failed to login"); 
       }
     } catch (error) {
       setError("An error occurred. Please try again.");

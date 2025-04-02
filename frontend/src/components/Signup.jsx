@@ -13,21 +13,19 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("/api/signup", {
+      const data = { name, email, password };
+      const response = await axios.post("/api/signup",data, {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, password }),
       });
-
-      const data = await response.json();
-      console.log(data);
+      console.log(response.data);
 
       if (response.status === 200) {
-        alert(data.message);
+        alert(response.data.message);
         navigate("/Login");
       } else {
-        setError(data.message || "Failed to sign up");
+        setError(response.data.message || "Failed to sign up");
       }
     } catch (error) {
       setError("An error occurred. Please try again.");
