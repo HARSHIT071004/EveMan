@@ -20,23 +20,21 @@ const CreateEvent = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem("token");
-
-      const response = await axios.post("/api/createevent", {
+      const data = { name, description, date };
+      const response = await axios.post("/api/createevent", data,{
         headers: {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${token}`,
-        },
-        body: JSON.stringify({ name, description, date }),
+        }
       });
 
-      const data = await response.json();
       setLoading(false);
 
       if (response.status === 200) {
-        alert(data.message);
+        alert(response.data.message);
         navigate("/Clientform");
       } else {
-        setError(data.message || "Failed to create event");
+        setError(response.data.message || "Failed to create event");
       }
     } catch (error) {
       setLoading(false);

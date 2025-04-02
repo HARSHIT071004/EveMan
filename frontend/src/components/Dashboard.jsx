@@ -12,20 +12,18 @@ const Dashboard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/allevents", {
+      const response = await axios.post("/api/allevents",{selectedServices}, {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ selectedServices }),
       });
 
-      const data = await response.json();
 
       if (response.status === 200) {
-        alert(data.message);
+        alert(response.data.message);
         navigate("/thankyou");
       } else {
-        setSuccessMessage(data.message || "Failed to create event");
+        setSuccessMessage(response.data.message || "Failed to create event");
       }
     } catch (error) {
       setSuccessMessage("An error occurred. Please try again.");

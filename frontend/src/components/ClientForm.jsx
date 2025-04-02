@@ -24,20 +24,18 @@ const ClientForm = () => {
     }
 
     try {
-      const response = await axios.post("/api/clientevent", {
+      const response = await axios.post("/api/clientevent",formData,{
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
 
       if (response.status === 200) {
-        alert(data.message);
+        alert(response.data.message);
         navigate("/Dashboard");
       } else {
-        setError(data.message || "Failed to submit request");
+        setError(response.data.message || "Failed to submit request");
       }
     } catch (error) {
       setError("An error occurred. Please try again.");
