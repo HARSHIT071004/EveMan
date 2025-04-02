@@ -2,21 +2,17 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const { Server } = require("socket.io"); // Socket.io import किया
-const http = require("http"); // HTTP server के लिए
-require("dotenv").config();
-
 const eventRoutes = require("./Routes/Eventroutes");
 const clientroute = require("./Routes/Clientroute");
 const signuproute = require("./Routes/signuproutes");
 const loginroutes = require("./Routes/Loginroutes");
 const alleventroutes = require("./Routes/Alleventroutes");
-
 const app = express();
-const server = http.createServer(app); // HTTP server बनाया
 const PORT = 5000;
+require("dotenv").config();
 
 const dev = process.env.NODE_DEV;
+
 
 // Middleware setup
 app.use(cors({
@@ -27,7 +23,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the server!");
+  res.json("Welcome to the server!");
 });
 
 // Routes
@@ -56,28 +52,8 @@ mongoose
   .then(() => console.log("Connected to MongoDB "))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-// ✅ Socket.io Server Setup  
-const io = new Server(server, {
-  cors: {
-    origin: "http://localhost:5173", // अपने frontend के URL को यहाँ डालो
-    methods: ["GET", "POST"],
-  },
-});
-
-io.on("connection", (socket) => {
-  console.log("A user connected:", socket.id);
-
-  socket.on("message", (data) => {
-    console.log("Message received:", data);
-    io.emit("message", data); // सभी users को message भेजो
-  });
-
-  socket.on("disconnect", () => {
-    console.log("User disconnected:", socket.id);
-  });
-});
 
 // Server को HTTP server से run करो
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
