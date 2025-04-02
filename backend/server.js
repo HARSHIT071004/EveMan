@@ -13,10 +13,7 @@ require("dotenv").config();
 const app = express();
 
 // Middleware setup
-app.use(cors({
-    origin: "https://eveman-two.vercel.app/",
-    credentials: true,
-}));
+app.use(cors("https://eveman-two.vercel.app/"));
 app.use(bodyParser.json());
 app.use(express.json());
 
