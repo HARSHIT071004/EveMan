@@ -17,7 +17,7 @@
 
 
 import React from "react";
-import LiveChat from "./Livechat";
+
 
 const HelpCenter = () => {
   return (
@@ -25,7 +25,6 @@ const HelpCenter = () => {
       <h1 className="text-2xl md:text-3xl font-bold text-center md:text-left">
         Help Center
       </h1>
-      <LiveChat />
     </div>
   );
 };
