@@ -1,11 +1,6 @@
-
-
-
-
-
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from '../utils/axios'
 
 const CreateEvent = () => {
   const [name, setName] = useState("");
@@ -14,8 +9,6 @@ const CreateEvent = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
-
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,21 +19,15 @@ const CreateEvent = () => {
 
     setLoading(true);
     try {
-      const token = localStorage.getItem("token");  
-      
+      const token = localStorage.getItem("token");
 
-
-      const response = await fetch("http://localhost:5000/api/createevent", {
-        method: "POST",
+      const response = await axios.post("/api/createevent", {
         headers: {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${token}`,
-          // "Authorization": `token`,
-
         },
         body: JSON.stringify({ name, description, date }),
       });
-
 
       const data = await response.json();
       setLoading(false);
@@ -58,35 +45,37 @@ const CreateEvent = () => {
   };
 
   return (
-    <div className=" mt-70 bg-gradient-to-br p-6 flex items-center justify-center">
-      <div className=" w-[40%] h-140   bg-[rgb(22,16,16)] backdrop-blur-xl p-3 rounded-2xl shadow-xl">
-        <h2 className="text-5xl text-[rgb(255,255,255)] font-bold mt-7 text-center  mb-3">Create Event</h2>
-        {error && <div className=" text-red-500 text-center mb-4">{error}</div>}
-        <form onSubmit={handleSubmit} className="ml-29 space-y-4">
+    <div className="mt-20 bg-gradient-to-br p-6 flex items-center justify-center">
+      <div className="w-full sm:w-[60%] md:w-[50%] lg:w-[40%] bg-[rgb(22,16,16)] backdrop-blur-xl p-6 rounded-2xl shadow-xl">
+        <h2 className="text-4xl sm:text-5xl text-white font-bold text-center mb-6">
+          Create Event
+        </h2>
+        {error && <div className="text-red-500 text-center mb-4">{error}</div>}
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-1xl font-medium">Name</label>
+            <label className="block text-xl font-medium text-white">Name</label>
             <input
               type="text"
-              className="w-[79%] px-2 py-3 border rounded focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full px-3 py-3 border rounded focus:outline-none focus:ring focus:ring-blue-300"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
             />
           </div>
           <div>
-            <label className="block text-1xl font-medium">Description</label>
+            <label className="block text-xl font-medium text-white">Description</label>
             <textarea
-              className="w-[79%] px-2 py-3 border rounded focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full px-3 py-3 border rounded focus:outline-none focus:ring focus:ring-blue-300"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               required
             />
           </div>
           <div>
-            <label className="block text-1xl font-medium"> Date</label>
+            <label className="block text-xl font-medium text-white">Date</label>
             <input
               type="date"
-              className="w-[79%] px-2 py-3 border rounded focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full px-3 py-3 border rounded focus:outline-none focus:ring focus:ring-blue-300"
               value={date}
               onChange={(e) => setDate(e.target.value)}
               required
@@ -94,7 +83,7 @@ const CreateEvent = () => {
           </div>
           <button
             type="submit"
-            className=" w-[79%] px-2 py-3 mt-10 text-2xl bg-blue-600 text-white  rounded-2xl hover:bg-blue-700"
+            className="w-full px-4 py-3 mt-6 text-xl bg-blue-600 text-white rounded-2xl hover:bg-blue-700"
             disabled={loading}
           >
             {loading ? "Creating..." : "Create Event"}
@@ -106,26 +95,6 @@ const CreateEvent = () => {
 };
 
 export default CreateEvent;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

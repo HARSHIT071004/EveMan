@@ -68,51 +68,29 @@ const ExploreEvents = () => {
   const events = eventsData[category] || [];
 
   return (
-    // <div className="py-10 px-10 ">
-    //   <h2 className="text-4xl font-bold text-center mb-6">
-    //     {category || "Explore Events"}
-    //   </h2>
-    //   <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    //     {events.length > 0 ? (
-    //       events.map((event) => (
-    //         <div
-    //           key={event.id}
-    //           className="p-5 bg-white text-black rounded-lg shadow-xl hover:scale-105 transition-all duration-300"
-    //         >
-    //           <h4 className="text-xl font-medium">{event.name}</h4>
-    //           <p className="text-gray-800">{event.date}</p>
-    //         </div>
-    //       ))
-    //     ) : (
-    //       <p className="text-center text-gray-500 col-span-full">
-    //         No events found for this category.
-    //       </p>
-    //     )}
-    //   </div>
-    // </div>
     <div className="py-10 px-10 mt-19">
-  <h2 className="text-4xl font-bold text-center mb-6">
-    {category || "Explore Events"}
-  </h2>
-  <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    {events.length > 0 ? (
-      events.map((event) => (
-        <div
-          key={event.id}
-          className="p-5 bg-[rgb(22,16,16)] text-black rounded-3xl shadow-xl hover:scale-105 transition-all duration-300 h-36 md:h-[16rem] flex flex-col justify-center"
-        >
-          <h4 className="text-3xl text-gray-100 font-medium">{event.name}</h4>
-          <p className="text-gray-500">{event.date}</p>
-        </div>
-      ))
-    ) : (
-      <p className="text-center text-gray-500 col-span-full">
-        No events found for this category.
-      </p>
-    )}
-  </div>
-</div>
-
+      <h2 className="text-3xl font-semibold text-center mb-6">
+        {category || "Explore Events"}
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {events.length > 0 ? (
+          events.map((event) => (
+            <div
+              key={event.id}
+              className="p-4 bg-[#060607fd] text-white rounded-lg border border-gray-300 shadow-md 
+              hover:shadow-lg transition-all duration-300 h-auto flex flex-col items-start"
+            >
+              <h4 className="text-lg font-medium text-gray-100">{event.name}</h4>
+              <p className="text-sm text-gray-300 mt-1">{event.date}</p>
+            </div>
+          ))
+        ) : (
+          <p className="text-center text-gray-500 col-span-full">
+            No events found for this category.
+          </p>
+        )}
+      </div>
+    </div>
   );
 };
 

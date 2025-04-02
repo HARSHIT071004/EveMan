@@ -1,15 +1,13 @@
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from '../utils/axios'
 
 const ClientForm = () => {
   const [formData, setFormData] = useState({
     budget: "",
     category: "",
-    // location: "",
     requirements: "",
   });
-  // const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -25,12 +23,8 @@ const ClientForm = () => {
       return;
     }
 
-    // setLoading(true);
-    // setError("");
-
     try {
-      const response = await fetch("http://localhost:5000/api/clientevent", {
-        method: "POST",
+      const response = await axios.post("/api/clientevent", {
         headers: {
           "Content-Type": "application/json",
         },
@@ -47,13 +41,13 @@ const ClientForm = () => {
       }
     } catch (error) {
       setError("An error occurred. Please try again.");
-    } 
+    }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="bg-[rgb(33,33,33)] mt-19 p-8 rounded-2xl shadow-lg h-140 w-[65%]">
-        <h2 className="text-4xl font-bold text-center text-[rgb(255,255,255)] mb-6">
+    <div className="flex items-center justify-center min-h-screen px-4">
+      <div className="bg-[rgb(33,33,33)] mt-10 sm:mt-20 p-8 rounded-2xl shadow-lg w-full sm:w-[65%] md:w-[50%] lg:w-[40%]">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-white mb-6">
           Plan Your Event
         </h2>
         {error && <div className="text-red-500 text-center mb-4">{error}</div>}
@@ -64,15 +58,15 @@ const ClientForm = () => {
             placeholder="Enter your budget"
             value={formData.budget}
             onChange={handleChange}
-            className="w-full py-3 text-1xl border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full py-3 text-xl border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
           <select
             name="category"
             value={formData.category}
             onChange={handleChange}
-            className="w-full py-3 text-1xl border rounded-lg focus:outline-none bg-[rgb(33,33,33)] focus:ring-2 focus:ring-blue-400"
+            className="w-full py-3 text-xl border rounded-lg focus:outline-none bg-[rgb(33,33,33)] focus:ring-2 focus:ring-blue-400"
           >
-            <option  className="text-white "value="">Select Category</option>
+            <option value="">Select Category</option>
             <option value="wedding">Wedding</option>
             <option value="corporate">Corporate</option>
             <option value="party">Party</option>
@@ -82,14 +76,13 @@ const ClientForm = () => {
             placeholder="Any specific requirements?"
             value={formData.requirements}
             onChange={handleChange}
-            className="w-full py-3 text-1xl border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full py-3 text-xl border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
           <button
             type="submit"
-            className="w-full bg-blue-600 text-3xl text-white font-semibold px-4 py-7 rounded-lg hover:bg-blue-700 transition-all duration-300"
-            // disabled={loading}
+            className="w-full bg-blue-600 text-2xl sm:text-3xl text-white font-semibold px-4 py-6 rounded-lg hover:bg-blue-700 transition-all duration-300"
           >
-           Submit Request
+            Submit Request
           </button>
         </form>
       </div>

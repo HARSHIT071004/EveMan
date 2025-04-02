@@ -49,10 +49,10 @@ const Footer = () => {
   const navigate = useNavigate();
 
   return (
-    <footer className="w-full bg-[#0a0412] border-t-2 text-white py-12">
-      <div className="container max-w-6xl mx-auto flex flex-col justify-center items-center gap-8 text-center">
+    <footer className="w-full bg-[#0a0412] border-t-2 mt-1 text-white py-12">
+      <div className="container max-w-6xl mx-auto flex flex-col mb-15 justify-center items-center gap-8 text-center">
         {/* Navigation Links */}
-        <div className="flex justify-center gap-12 text-lg text-gray-300">
+        <div className="flex justify-center gap-15 text-sm text-gray-300">
           <a
             href="/"
             className="hover:text-purple-400 transition-colors duration-300"
@@ -80,12 +80,12 @@ const Footer = () => {
         </div>
 
         {/* Create Events Button */}
-        <button
+        {/* <button
           onClick={() => navigate("/CreateEvent")}
           className="text-xl font-semibold rounded-2xl px-8 py-4 bg-[rgb(17,17,17)] text-white hover:bg-purple-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-700/50"
         >
           Create Events
-        </button>
+        </button> */}
 
         {/* Copyright */}
         <p className="text-sm text-gray-400">
@@ -97,3 +97,72 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from "react";
+// import { useNavigate } from "react-router-dom";
+
+// const Footer = () => {
+//   const navigate = useNavigate();
+
+//   return (
+//     <footer className="w-full bg-[#0a0412] border-t-2 mt-1 text-white py-12">
+//       <div className="container max-w-6xl mx-auto flex flex-col mb-15 justify-center items-center gap-8 text-center">
+//         {/* Navigation Links */}
+//         <div className="flex justify-center gap-15 text-sm text-gray-300">
+//           <a
+//             href="/"
+//             className="hover:text-purple-400 transition-colors duration-300"
+//           >
+//             Home
+//           </a>
+//           <a
+//             href="/about"
+//             className="hover:text-purple-400 transition-colors duration-300"
+//           >
+//             About
+//           </a>
+//           <a
+//             href="/services"
+//             className="hover:text-purple-400 transition-colors duration-300"
+//           >
+//             Services
+//           </a>
+//           <a
+//             href="/contacts"
+//             className="hover:text-purple-400 transition-colors duration-300"
+//           >
+//             Contact
+//           </a>
+//         </div>
+
+//         {/* Create Events Button */}
+//         <button
+//           onClick={() => navigate("/CreateEvent")}
+//           className="text-xl font-semibold rounded-2xl px-8 py-4 bg-[rgb(17,17,17)] text-white hover:bg-purple-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-700/50"
+//         >
+//           Create Events
+//         </button>
+
+//         {/* Copyright */}
+//         <p className="text-sm text-gray-400">
+//           © {new Date().getFullYear()} Eveman. All rights reserved.
+//         </p>
+//       </div>
+//     </footer>
+//   );
+// };
+
+// export default Footer;
