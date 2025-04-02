@@ -14,9 +14,8 @@ const app = express();
 
 // Middleware setup
 app.use(cors({
-  origin:"https://eveman-two.vercel.app/",
+  origin:"https://eveman-two.vercel.app",
   credentials: true,
-  allowedHeaders: "Content-Type, Authorization, X-Requested-With"
 }));
 app.use(bodyParser.json());
 app.use(express.json());
