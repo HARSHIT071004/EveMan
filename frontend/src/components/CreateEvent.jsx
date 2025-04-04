@@ -147,8 +147,8 @@ const CreateEvent = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 p-6 flex items-center justify-center">
-      <div className="w-full sm:w-[60%] md:w-[50%] lg:w-[40%] bg-gray-800 shadow-2xl rounded-3xl p-6 border border-gray-700">
+    <div className="min-h-screen bg-[rgb(22,16,16)] p-6 flex items-center justify-center">
+      <div className="w-full sm:w-[60%] md:w-[50%] lg:w-[40%] bg-black shadow-2xl rounded-3xl p-6 border border-gray-700">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
           Create Event
         </h2>
