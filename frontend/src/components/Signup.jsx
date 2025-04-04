@@ -264,7 +264,7 @@ const Signup = () => {
         {/* Right - Image */}
         <div className="w-full md:w-1/2 flex justify-center items-center relative group">
           <img
-            className="w-full h-[200px] sm:h-[350px] object-cover rounded-3xl cursor-pointer transition-transform duration-300 group-hover:scale-105"
+            className="w-[100px] h-[160px] sm:h-[350px] object-cover rounded-3xl cursor-pointer transition-transform duration-300 group-hover:scale-105"
             src="/eveman6.jpg"
             alt="Event"
             onClick={() => navigate("/about")}
