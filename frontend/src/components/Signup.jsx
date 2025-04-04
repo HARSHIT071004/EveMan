@@ -214,7 +214,7 @@ const Signup = () => {
               <button
                 type="button"
                 onClick={handleGoogleLogin}
-                className="w-full flex items-center justify-center gap-2 bg-white text-gray-800 py-2 rounded-lg hover:bg-gray-100 transition-all duration-300 text-sm"
+                className="w-full flex items-center justify-center gap-2 bg-white text-gray-800 py-2 rounded-lg hover:bg-gray-500 transition-all duration-300 text-sm"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24">
                   <path
