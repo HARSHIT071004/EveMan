@@ -41,7 +41,7 @@
 
 
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -51,31 +51,31 @@ const Footer = () => {
       <div className="container max-w-6xl mx-auto flex flex-col justify-center items-center gap-10 text-center">
         {/* Navigation Links */}
         <div className="flex justify-center gap-12 text-base font-medium text-gray-300">
-          <a
-            href="/"
-            className="hover:text-purple-500 transition-colors duration-300 ease-in-out"
-          >
-            Home
-          </a>
-          <a
-            href="/about"
-            className="hover:text-purple-500 transition-colors duration-300 ease-in-out"
-          >
-            About
-          </a>
-          <a
-            href="/services"
-            className="hover:text-purple-500 transition-colors duration-300 ease-in-out"
-          >
-            Services
-          </a>
-          <a
-            href="/contacts"
-            className="hover:text-purple-500 transition-colors duration-300 ease-in-out"
-          >
-            Contact
-          </a>
-        </div>
+  <Link
+    to="/"
+    className="hover:text-purple-500 transition-colors duration-300 ease-in-out"
+  >
+    Home
+  </Link>
+  <Link
+    to="/about"
+    className="hover:text-purple-500 transition-colors duration-300 ease-in-out"
+  >
+    About
+  </Link>
+  <Link
+    to="/services"
+    className="hover:text-purple-500 transition-colors duration-300 ease-in-out"
+  >
+    Services
+  </Link>
+  <Link
+    to="/contacts"
+    className="hover:text-purple-500 transition-colors duration-300 ease-in-out"
+  >
+    Contact
+  </Link>
+</div>
 
         {/* Create Events Button */}
         {/* Uncomment if needed */}
