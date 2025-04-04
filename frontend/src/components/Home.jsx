@@ -73,12 +73,12 @@ const Home = () => {
 
         {/* Image Gallery */}
         <div className="relative mb-20 flex justify-center items-center perspective-1000">
-          <div className="relative w-[900px] md:w-[600px] h-[450px] md:h-[400px] animate-rotate-stack">
+          <div className="relative w-[900px] md:w-[600px] h-[450px] md:h-[400px] animate-rotate-stack mr-70">
             {["/evemanphoto2.jpg", "/evemanphoto.jpg", "/evemanphoto3.jpg"].map(
               (src, index) => (
                 <img
                   key={index}
-                  className={`absolute w-[450px] md:w-[300px] h-[450px] md:h-[300px] object-cover rounded-3xl border-2 border-purple-900/60 shadow-lg transition-all duration-500 ease-in-out hover:shadow-purple-700/70 hover:scale-110 hover:z-10 ${
+                  className={`absolute w-[450px] md:w-[300px] h-[550px] md:h-[400px] object-cover rounded-3xl border-2 border-purple-900/60 shadow-lg transition-all duration-500 ease-in-out hover:shadow-purple-700/70 hover:scale-110 hover:z-10 ${
                     index === 0
                       ? "rotate-[10deg] translate-x-[200px] translate-z-10"
                       : index === 1
