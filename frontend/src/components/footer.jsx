@@ -40,8 +40,6 @@
 // export default footer;
 
 
-
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -49,46 +47,47 @@ const Footer = () => {
   const navigate = useNavigate();
 
   return (
-    <footer className="w-full bg-[#0a0412] border-t-2 mt-1 text-white py-12">
-      <div className="container max-w-6xl mx-auto flex flex-col mb-15 justify-center items-center gap-8 text-center">
+    <footer className="w-full bg-black border-t-2 border-gray-900 mt-1 text-white py-12">
+      <div className="container max-w-6xl mx-auto flex flex-col justify-center items-center gap-10 text-center">
         {/* Navigation Links */}
-        <div className="flex justify-center gap-15 text-sm text-gray-300">
+        <div className="flex justify-center gap-12 text-base font-medium text-gray-300">
           <a
             href="/"
-            className="hover:text-purple-400 transition-colors duration-300"
+            className="hover:text-purple-500 transition-colors duration-300 ease-in-out"
           >
             Home
           </a>
           <a
             href="/about"
-            className="hover:text-purple-400 transition-colors duration-300"
+            className="hover:text-purple-500 transition-colors duration-300 ease-in-out"
           >
             About
           </a>
           <a
             href="/services"
-            className="hover:text-purple-400 transition-colors duration-300"
+            className="hover:text-purple-500 transition-colors duration-300 ease-in-out"
           >
             Services
           </a>
           <a
             href="/contacts"
-            className="hover:text-purple-400 transition-colors duration-300"
+            className="hover:text-purple-500 transition-colors duration-300 ease-in-out"
           >
             Contact
           </a>
         </div>
 
         {/* Create Events Button */}
+        {/* Uncomment if needed */}
         {/* <button
           onClick={() => navigate("/CreateEvent")}
-          className="text-xl font-semibold rounded-2xl px-8 py-4 bg-[rgb(17,17,17)] text-white hover:bg-purple-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-700/50"
+          className="text-xl font-semibold rounded-2xl px-8 py-4 bg-gray-900 text-white hover:bg-purple-600 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-600/40"
         >
           Create Events
         </button> */}
 
         {/* Copyright */}
-        <p className="text-sm text-gray-400">
+        <p className="text-sm text-gray-500 font-light">
           © {new Date().getFullYear()} Eveman. All rights reserved.
         </p>
       </div>
@@ -97,15 +96,6 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-
-
-
-
-
-
-
 
 
 

@@ -228,12 +228,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 h-[8vh] z-20 backdrop-blur-lg bg-[rgb(15,15,17)] flex items-center text-white p-4 sm:p-6">
+    <nav className="fixed top-0 left-0 right-0 h-[8vh] z-20 backdrop-blur-lg bg-[rgb(0,0,0)] flex items-center text-white p-4 sm:p-6">
       <div className="container mx-auto flex justify-between items-center w-full">
         {/* Left Side: Logo */}
-        <h1 className="ml-2 text-3xl font-bold tracking-wide bg-gradient-to-r from-[#b9b9b9] to-[#d8b9af] bg-clip-text text-transparent">
-          EveMan
-        </h1>
+        <h1 className="ml-2 text-4xl font-extrabold tracking-wider bg-gradient-to-r from-[#b9b9b9] to-[#d8b9af] bg-clip-text text-transparent" style={{ fontFamily: 'Poppins, sans-serif' }}>
+  EveMan
+</h1>
 
         {/* Right Side: Navigation Links */}
         <div className="hidden md:flex gap-4 mr-4">
