@@ -79,9 +79,9 @@ const Services = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {services.map((service, index) => (
-          <div key={index} className="bg-[rgb(108,173,102)] shadow-lg p-6 rounded-xl hover:shadow-2xl transition">
-            <h2 className="text-lg sm:text-2xl font-semibold text-gray-900">{service.title}</h2>
-            <p className="text-gray-200 mt-2 text-sm sm:text-base">{service.desc}</p>
+          <div key={index} className="bg-[rgb(202,206,255)] shadow-lg p-6 rounded-xl hover:shadow-2xl transition">
+            <h2 className="text-lg sm:text-lg font-semibold text-gray-900">{service.title}</h2>
+            <p className="text-gray-800 mt-2 text-sm sm:text-base">{service.desc}</p>
           </div>
         ))}
       </div>
