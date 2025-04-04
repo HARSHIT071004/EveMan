@@ -179,7 +179,7 @@ const ExploreEvents = () => {
   const events = eventsData[category] || [];
 
   return (
-    <div className="min-h-screen bg-gray-900 py-10 px-6 md:px-10">
+    <div className="min-h-screen bg-[rgb(15,15,17)] py-10 px-6 md:px-10">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
         {category || "Explore Events"}
       </h2>
