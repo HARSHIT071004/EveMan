@@ -131,8 +131,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-900 p-4">
-      <div className="bg-gray-800 shadow-2xl rounded-3xl p-6 sm:w-[90%] md:w-[450px] lg:w-[500px] h-auto border border-gray-700">
+    <div className="flex justify-center items-center min-h-screen bg-[rgb(22,16,16)] p-4">
+      <div className="bg-black shadow-2xl rounded-3xl p-6 sm:w-[90%] md:w-[450px] lg:w-[500px] h-auto border border-gray-700">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-6 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
           Welcome Back
         </h2>
@@ -175,7 +175,7 @@ const Login = () => {
           </button>
 
           {/* Social Login Buttons */}
-          <div className="flex flex-col gap-2 mt-4">
+          {/* <div className="flex flex-col gap-2 mt-4">
             <button
               type="button"
               onClick={handleGoogleLogin}
@@ -212,7 +212,7 @@ const Login = () => {
               </svg>
               Login with Apple
             </button>
-          </div>
+          </div> */}
         </form>
 
         <p className="text-xs text-center text-gray-400 mt-4">

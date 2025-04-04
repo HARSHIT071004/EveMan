@@ -77,8 +77,8 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <div className="py-5 px-7 text-center rounded-2xl bg-[rgb(255,255,255)]">
-      <h2 className="text-4xl md:text-5xl font-semibold mb-10 text-[rgb(0,0,0)]">
+    <div className="py-5 px-7 text-center rounded-2xl ">
+      <h2 className="text-4xl md:text-5xl font-semibold mb-10 text-[rgb(255,255,255)]">
         How It <span className="text-[#d86ad8]">Works?</span>
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-4">

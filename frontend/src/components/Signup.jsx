@@ -152,8 +152,8 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-900 p-4">
-      <div className="w-full md:w-3/4 lg:w-1/2 flex flex-col md:flex-row items-center justify-between bg-gray-800 shadow-2xl rounded-3xl overflow-hidden border border-gray-700">
+    <div className="flex items-center justify-center min-h-screen bg-[rgb(22,16,16)] p-4">
+      <div className="w-full md:w-3/4 lg:w-1/2 flex flex-col md:flex-row items-center justify-between bg-black shadow-2xl rounded-3xl overflow-hidden border border-gray-700">
         {/* Left - Sign Up Form */}
         <div className="w-full md:w-1/2 p-6 text-white">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4 bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
