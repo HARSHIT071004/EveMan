@@ -50,11 +50,11 @@ const EventOverview = ({ totalEvents, upcomingEvents, registeredUsers, revenue }
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-9">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  my-4">
       {overviewData.map((item, index) => (
         <div 
           key={index} 
-          className={`p-6 rounded-4xl shadow-lg text-black transition transform hover:scale-105 hover:shadow-xl ${item.gradient}`}
+          className={`p-3 shadow-lg text-black transition transform  ${item.gradient}`}
           style={{
             backdropFilter: "blur(10px)",
             boxShadow: "0px 4px 10px rgba(0,0,0,0.2)"

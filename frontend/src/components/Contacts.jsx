@@ -15,16 +15,16 @@ const Contacts = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[rgba(22,16,16,0.9)] p-4 sm:p-6 overflow-hidden">
-      <div className="relative  max-w-5xl rounded-3xl p-[3px] bg-gradient-to-br from-[#f39c12]/30 via-[#9e3c51]/20 to-transparent shadow-2xl border-2 border-gray-800/60">
-        <div className="flex flex-col md:flex-row items-center justify-between bg-[rgba(27,35,41,0.8)] backdrop-blur-md rounded-[inherit] p-6 sm:p-8 lg:p-10 text-white">
+    <div className="min-h-screen mt-18 flex flex-col items-center justify-center bg-[rgb(9,8,7)] p-4 sm:p-6 overflow-hidden">
+      <div className="relative w-29xl rounded-3xl p-[3px]  shadow-2xl border-2 border-white">
+        <div className="flex flex-col md:flex-row items-center justify-between bg-[rgb(24,30,35)] backdrop-blur-md rounded-[inherit] p-6 sm:p-8 lg:p-19 text-white">
           {/* Decorative Background Elements */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(243,156,18,0.15)_0%,transparent_60%)] opacity-50 -z-10"></div>
-          <div className="absolute -top-20 -right-20 w-48 h-48 bg-[#f39c12]/10 rounded-full blur-xl -z-10"></div>
+          {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(243,156,18,0.15)_0%,transparent_60%)] opacity-50 -z-10"></div>
+          <div className="absolute -top-20 -right-20 w-48 h-48 bg-[#f39c12]/10 rounded-full blur-xl -z-10"></div> */}
 
           {/* Left - Get in Touch Form */}
-          <div className="w-full md:w-1/2 p-4 sm:p-6 text-white">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#f39c12] mb-6 tracking-wide drop-shadow-lg text-center">
+          <div className="w-[95%] md:w-[90%] p-4 sm:p-3 text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#f39c12] mb-6 tracking-wide drop-shadow-lg text-center">
               Get in Touch
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
