@@ -18,11 +18,16 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // ✅ CORS middleware (only once)
+// ✅ CORS middleware (only once)
 app.use(cors({
   origin: "https://eveman-two.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }));
+
+// ✅ Allow preflight (OPTIONS) requests
+app.options("*", cors());
+
 
 // ✅ Middleware setup
 app.use(bodyParser.json());
