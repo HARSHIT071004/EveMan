@@ -100,6 +100,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "../utils/axios";
 
 const CreateEvent = () => {
   const [name, setName] = useState("");
