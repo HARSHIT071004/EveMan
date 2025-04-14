@@ -385,24 +385,46 @@ const Signup = () => {
               Sign Up
             </button>
             {/* Social Logins */}
-            <div className="flex flex-col gap-3">
-              <button
-                type="button"
-                onClick={handleGoogleLogin}
-                className="w-full flex items-center justify-center gap-2 bg-white text-gray-800 py-2.5 rounded-xl hover:bg-gray-200 transition-all duration-300 text-sm font-medium shadow-md"
-              >
-                {/* Google SVG can be placed here */}
-                Sign up with Google
-              </button>
-              <button
-                type="button"
-                onClick={handleAppleLogin}
-                className="w-full flex items-center justify-center gap-2 bg-gray-900 text-white py-2.5 rounded-xl hover:bg-gray-800 transition-all duration-300 text-sm font-medium shadow-md"
-              >
-                {/* Apple SVG can be placed here */}
-                Sign up with Apple
-              </button>
-            </div>
+            <div className="flex flex-row gap-3">
+  <button
+    type="button"
+    onClick={handleGoogleLogin}
+    className="w-[20vh] flex items-center justify-center gap-4 bg-gray-400 text-gray-800 py-2.5 rounded-xl hover:bg-gray-200 transition-all duration-300 text-sm font-medium shadow-md"
+  >
+    {/* Google SVG Logo */}
+    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+      <path
+        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h6.64c-.28 1.27-.89 2.35-1.93 3.06l3.2 2.48c1.99-1.83 3.13-4.53 3.13-7.55z"
+        fill="#4285F4"
+      />
+      <path
+        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.2-2.48c-.89.6-2.03.95-3.08.95-2.35 0-4.34-1.58-5.05-3.7H3.36v2.33A9.99 9.99 0 0012 23z"
+        fill="#34A853"
+      />
+      <path
+        d="M6.95 15.3c-.47-1.38-1.19-2.54-2.15-3.36V9.67H3.36v2.33c-.93 1.86-.93 3.88 0 5.74l2.59-2.03z"
+        fill="#FBBC05"
+      />
+      <path
+        d="M12 5.76c1.33 0 2.52.45 3.46 1.36l2.59-2.59C16.46 2.94 14.47 2 12 2 8.03 2 4.68 4.23 3.36 7.33l2.59 2.03c.71-2.12 2.7-3.6 5.05-3.6z"
+        fill="#EA4335"
+      />
+    </svg>
+  </button>
+  <button
+    type="button"
+    onClick={handleAppleLogin}
+    className="w-[20vh] flex items-center justify-center gap-2 bg-gray-900 text-white py-2.5 rounded-xl hover:bg-gray-800 transition-all duration-300 text-sm font-medium shadow-md"
+  >
+    {/* Apple SVG Logo */}
+    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93s3.06-7.44 7-7.93v15.86zm2-.07V2.07c4.34.58 7.63 4.24 7.63 8.46 0 4.22-3.29 7.88-7.63 8.43z"
+        fill="#FFFFFF"
+      />
+    </svg>
+  </button>
+</div>
           </form>
           <p className="text-xs text-center mt-5 text-gray-400">
             Already have an account?{" "}
