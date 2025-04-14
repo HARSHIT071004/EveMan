@@ -100,7 +100,7 @@ const ManagerCatalog = ({ selectedServices, setSelectedServices }) => {
           <div 
             key={index} 
             onClick={() => handleServiceClick(service)}
-            className="bg-[rgb(10,13,15)] rounded-2xl shadow-lg p-4 rounded-2xl hover:shadow-2xl transition cursor-pointer"
+            className="bg-[rgb(10,13,15)] rounded-2xl shadow-lg p-4  hover:shadow-2xl transition cursor-pointer"
           >
             <h2 className="text-sm sm:text-xl font-semibold text-[#ffb300]">{service.title}</h2>
             <p className="text-[#e4e1e1a8] text-sm sm:text-sm mt-2">{service.desc}</p>

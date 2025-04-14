@@ -14,7 +14,7 @@ const app = express();
 
 // Middleware setup
 app.use(cors({
-  origin:"https://eveman-two.vercel.app",
+  origin:"https://eveman-two.vercel.app/",
   credentials: true,
 }));
 app.use(bodyParser.json());
