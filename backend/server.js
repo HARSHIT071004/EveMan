@@ -24,16 +24,6 @@ app.get("/", (req, res) => {
   res.json("Welcome to the server!");
 });
 
-
-require("dotenv").config(); // Ensure this is at the top
-
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => {
-    console.error("MongoDB connection error:", err);
-    process.exit(1);
-  });
-
 // Routes
 app.use("/api", eventRoutes);
 app.use("/api", clientroute);
@@ -64,4 +54,3 @@ mongoose.connect(process.env.MONGO_URI)
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-
