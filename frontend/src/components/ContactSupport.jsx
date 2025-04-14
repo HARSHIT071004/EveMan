@@ -118,19 +118,19 @@ const ContactSupport = () => {
       <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 mb-10">
         <Link
           to="/call"
-          className="w-full md:w-auto px-6 py-3 text-base md:text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-md transition-all duration-300 text-center"
+          className="w-full md:w-auto px-6 py-3 text-base md:text-lg font-semibold text-black bg-[#ffb300] rounded-lg shadow-md transition-all duration-300 text-center"
         >
           Call Support
         </Link>
         <Link
           to="/email"
-          className="w-full md:w-auto px-6 py-3 text-base md:text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg shadow-md transition-all duration-300 text-center"
+          className="w-full md:w-auto px-6 py-3 text-base md:text-lg font-semibold text-black bg-[#ffb300] rounded-lg shadow-md transition-all duration-300 text-center"
         >
           Email Support
         </Link>
         <Link
           to="/faqs"
-          className="w-full md:w-auto px-6 py-3 text-base md:text-lg font-semibold text-white bg-gradient-to-r from-green-600 to-teal-600 rounded-lg shadow-md transition-all duration-300 text-center"
+          className="w-full md:w-auto px-6 py-3 text-base md:text-lg font-semibold text-black bg-[#ffb300] rounded-lg shadow-md transition-all duration-300 text-center"
         >
           FAQs
         </Link>
