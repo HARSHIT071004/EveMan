@@ -3,10 +3,10 @@ import { Link, Navigate } from "react-router-dom";
 import { FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
 const ContactSupport = () => {
   return (
-    <div className="py-1 px-2 p-2 text-center">
-      <h2 className="text-5xl font-semibold mb-4 text-[rgb(255,255,255)]">Contact <span className="text-purple-400">& Support</span></h2><br /><br />
+    <div className="py-1 px-2 p-2 text-center mb-19">
+      <h2 className="text-4xl font-semibold mb-1 text-[rgb(255,255,255)]">Contact <span className="text-[#f39c12] ">& Support</span></h2><br /><br />
 
-      <div className="flex flex-wrap justify-center gap-14">
+      <div className="flex flex-wrap justify-center gap-9">
         {/* <a href="/call" className="px-1 py-1 text-1xl text-black   bg-white rounded-lg  hover:bg-[#000000c4] hover:text-amber-100 transition">
            Call Support
         </a>
@@ -33,14 +33,14 @@ const ContactSupport = () => {
 <div className="flex gap-4">
   <Link
     to="/call"
-    className="px-4 py-2 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg hover:from-blue-700 hover:to-indigo-700 hover:shadow-lg transition-all duration-300"
+    className="px-4 py-2 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-md transition-all duration-300"
   >
     Call Support
   </Link>
 
   <Link
     to="/email"
-    className="px-4 py-2 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg hover:from-purple-700 hover:to-pink-700 hover:shadow-lg transition-all duration-300"
+    className="px-4 py-2 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg shadow-md transition-all duration-300"
   >
     Email Support
   </Link>
@@ -48,18 +48,19 @@ const ContactSupport = () => {
   {/* Uncomment if needed */}
   {/* <Link
     to="/helpcenter"
-    className="px-4 py-2 text-lg font-semibold text-white bg-gradient-to-r from-teal-600 to-cyan-600 rounded-lg hover:from-teal-700 hover:to-cyan-700 hover:shadow-lg transition-all duration-300"
+    className="px-4 py-2 text-lg font-semibold text-white bg-gradient-to-r from-teal-600 to-cyan-600 rounded-lg shadow-md transition-all duration-300"
   >
     Live Chat
   </Link> */}
 
   <Link
     to="/faqs"
-    className="px-4 py-2 text-lg font-semibold text-white bg-gradient-to-r from-green-600 to-teal-600 rounded-lg hover:from-green-700 hover:to-teal-700 hover:shadow-lg transition-all duration-300"
+    className="px-4 py-2 text-lg font-semibold text-white bg-gradient-to-r from-green-600 to-teal-600 rounded-lg shadow-md transition-all duration-300"
   >
     FAQs
   </Link>
 </div>
+
 
 <div className="flex gap-4">
       <a
