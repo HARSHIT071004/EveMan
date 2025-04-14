@@ -147,18 +147,18 @@ const Signup = () => {
           </p>
         </div>
 
-        <div className="w-full md:w-1/2 flex justify-center items-center relative">
+        {/* <div className="w-full md:w-1/2 flex justify-center items-center relative"> */}
           <img
-            className="h-[130px] sm:h-[350px] object-cover rounded-3xl mr-13 cursor-pointer max-w-[350px]"
-            src="/eve20.jpg"
+            className="h-[230px] sm:h-[370px] object-cover rounded-3xl mr-9 cursor-pointer w-[400px]"
+            src="/eve21.jpg"
             alt="Event"
             onClick={() => navigate("/about")}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-3xl"></div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 };
 
-export default Signup;
+export default Signup; 
