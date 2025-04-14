@@ -299,7 +299,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from '../utils/axios'
+import axios from 'axios'
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -312,7 +312,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const data = { name, email, password };
-      const response = await axios.post("/api/signup", data);
+      const response = await axios.post("https://evemanbackend.vercel.app/api/signup", data);
       console.log(response.data);
       if (response.status === 200) {
         alert(response.data.message);

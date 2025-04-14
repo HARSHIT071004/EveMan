@@ -86,7 +86,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from '../utils/axios'
+import axios from 'axios'
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -98,7 +98,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const data = { email, password };
-      const response = await axios.post("/api/login", data, {
+      const response = await axios.post("https://evemanbackend.vercel.app/api/login", data, {
         headers: {
           "Content-Type": "application/json",
         },
