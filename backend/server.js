@@ -10,18 +10,21 @@ const signuproute = require("./Routes/Signuproutes");
 const loginroutes = require("./Routes/Loginroutes");
 const alleventroutes = require("./Routes/Alleventroutes");
 
-const Signup = require("./Models/SignupModel"); // <-- Make sure this path is correct
+const Signup = require("./Models/SignupModel");
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// ✅ Middleware setup
+// ✅ CORS middleware (only once)
 app.use(cors({
-  origin: "https://eveman-two.vercel.app", // Your frontend live domain
+  origin: "https://eveman-two.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }));
+
+// ✅ Middleware setup
 app.use(bodyParser.json());
 app.use(express.json());
 
@@ -41,14 +44,14 @@ mongoose.connect(process.env.MONGO_URI, {
   process.exit(1);
 });
 
-// ✅ All API routes
+// ✅ API Routes
 app.use("/api", eventRoutes);
 app.use("/api", clientroute);
 app.use("/api", signuproute);
 app.use("/api", loginroutes);
 app.use("/api", alleventroutes);
 
-// ✅ Optional: Get all users (debug/admin route)
+// ✅ Optional: Get all users
 app.get("/api/users", async (req, res) => {
   try {
     const users = await Signup.find();
@@ -58,7 +61,7 @@ app.get("/api/users", async (req, res) => {
   }
 });
 
-// ✅ Start the server
+// ✅ Server Start
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
